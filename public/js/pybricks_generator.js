@@ -54,6 +54,8 @@ var pybricks_generator = new function() {
       '#!/usr/bin/env pybricks-micropython\n' +
       '\n' +
       '# Import the necessary libraries\n' +
+      'import math\n' +
+      'import time\n' +
       'from pybricks.parameters import *\n' +
       'from pybricks.hubs import EV3Brick\n' +
       'from pybricks.ev3devices import *\n' +
@@ -63,10 +65,10 @@ var pybricks_generator = new function() {
       '# Create the sensors and motors objects\n' +
       'ev3 = EV3Brick()\n' +
       '\n' +
-      'motorA = Motor(Port.A)\n' +
-      'motorB = Motor(Port.B)\n' +
-      'left_motor = motorA\n' +
-      'right_motor = motorB\n' +
+      'motorA = Motor(Port.B)\n' +
+      'motorB = Motor(Port.C)\n' +
+      'left_motor = motorB\n' +
+      'right_motor = motorC\n' +
       '\n';
 
     var sensorsCode = '';
