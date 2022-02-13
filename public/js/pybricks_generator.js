@@ -117,57 +117,13 @@ var pybricks_generator = new function() {
     code += sensorsCode + '\n';
     code += motorsCode + '\n';
 
-    code +=
-      '# Pybricks lacks move_tank and move_steering, so we\'ll add in our own\n' +
-      'def move_tank(left, right):\n' +
-      '  left_motor.run(left)\n' +
-      '  right_motor.run(right)\n' +
-      '\n' +
-      'def move_tank_for_degrees(left, right, degrees):\n' +
-      '  if degrees == 0 or (left == 0 and right == 0):\n' +
-      '    left_degrees = 0\n' +
-      '    right_degrees = 0\n' +
-      '  elif abs(left) > abs(right):\n' +
-      '    left_degrees = degrees\n' +
-      '    right_degrees = abs(right / float(left)) * degrees\n' +
-      '  else:\n' +
-      '    left_degrees = abs(left / float(right)) * degrees\n' +
-      '    right_degrees = degrees\n' +
-      '  if abs(left) > abs(right):\n' +
-      '    right_motor.run_angle(right, right_degrees, wait=False)\n' +
-      '    left_motor.run_angle(left, left_degrees, wait=True)\n' +
-      '  else:\n' +
-      '    left_motor.run_angle(left, left_degrees, wait=False)\n' +
-      '    right_motor.run_angle(right, right_degrees, wait=True)\n' +
-      '\n' +
-      'def move_tank_for_milliseconds(left, right, milliseconds):\n' +
-      '  left_motor.run_time(left, milliseconds, wait=False)\n' +
-      '  right_motor.run_time(right, milliseconds, wait=True)\n' +
-      '\n' +
-      'def get_speed_steering(steer, speed):\n' +
-      '  left_speed = speed\n' +
-      '  right_speed = speed\n' +
-      '  speed_factor = (50 - abs(float(steer))) / 50.0\n' +
-      '  if steer >= 0:\n' +
-      '    right_speed *= speed_factor\n' +
-      '  else:\n' +
-      '    left_speed *= speed_factor\n' +
-      '  return (left_speed, right_speed)\n' +
-      '\n' +
-      'def move_steering(steer, speed):\n' +
-      '  (left_speed, right_speed) = get_speed_steering(steer, speed)\n' +
-      '  move_tank(left_speed, right_speed)\n' +
-      '\n' +
-      'def move_steering_for_degrees(steer, speed, degrees):\n' +
-      '  (left_speed, right_speed) = get_speed_steering(steer, speed)\n' +
-      '  move_tank_for_degrees(left_speed, right_speed, degrees)\n' +
-      '\n' +
-      'def move_steering_for_milliseconds(steer, speed, milliseconds):\n' +
-      '  (left_speed, right_speed) = get_speed_steering(steer, speed)\n' +
-      '  move_tank_for_milliseconds(left_speed, right_speed, milliseconds)\n\n';
-
+    code += 'robot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=108)\n';
+    code += 'robot.settings(straight_speed=200, straight_acceleration=100, turn_rate=100, turn_acceleration=100)\n';
+    
+    code += '################################################\n';
     code += '# Here is where your code starts\n\n';
-
+    code += '################################################\n';
+    
     code += Blockly.Python.workspaceToCode(blockly.workspace);
     return code
   };
