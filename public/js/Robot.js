@@ -250,7 +250,7 @@ function Robot() {
             (options.bodyLength / 2) - options.bodyEdgeToWheelCenterZ
           ],
           [0,0,0],
-          'outA',
+          'outB',
           driveWheelOptions
         );
         self.leftWheel.loadImpostor();
@@ -265,7 +265,7 @@ function Robot() {
             (options.bodyLength / 2) - options.bodyEdgeToWheelCenterZ
           ],
           [0,0,0],
-          'outB',
+          'outC',
           driveWheelOptions
         );
         self.rightWheel.loadImpostor();
