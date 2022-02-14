@@ -65,8 +65,8 @@ var pybricks_generator = new function() {
       '# Create the sensors and motors objects\n' +
       'ev3 = EV3Brick()\n' +
       '\n' +
-      'motorA = Motor(Port.B)\n' +
-      'motorB = Motor(Port.C)\n' +
+      'motorB = Motor(Port.B)\n' +
+      'motorC = Motor(Port.C)\n' +
       'left_motor = motorB\n' +
       'right_motor = motorC\n' +
       '\n';
@@ -118,11 +118,11 @@ var pybricks_generator = new function() {
     code += motorsCode + '\n';
 
     code += 'robot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=108)\n';
-    code += 'robot.settings(straight_speed=200, straight_acceleration=100, turn_rate=100, turn_acceleration=100)\n';
+    code += 'robot.settings(straight_speed=200, straight_acceleration=100, turn_rate=100, turn_acceleration=100)\n\n';
     
     code += '################################################\n';
-    code += '# Here is where your code starts\n\n';
-    code += '################################################\n';
+    code += '# Here is where your code starts\n';
+    code += '################################################\n\n';
     
     code += Blockly.Python.workspaceToCode(blockly.workspace);
     return code
