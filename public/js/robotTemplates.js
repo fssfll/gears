@@ -378,16 +378,21 @@ var robotTemplates = [
       '</ul>' +
       '<h3>#robot-actuators#</h3>' +
       '<ul>' +
+        '<li>Port A : None</li>' +
         '<li>#robot-port# B : #robot-leftWheel#</li>' +
         '<li>#robot-port# C : #robot-rightWheel#</li>' +
+        '<li>Port D : None</li>' +
       '</ul>' +
       '<h3>#robot-sensors#</h3>' +
       '<ul>' +
         '<li>#robot-port# 1 : #robot-color#</li>' +
+        '<li>Port 2 : None</li>' +
+        '<li>Port 3 : None</li>' +
+        '<li>Port 4 : None</li>' +
       '</ul>',
     thumbnail: 'images/robots/singleFollower.jpg',
 
-    bodyHeight: 9,
+    bodyHeight: 4,
     bodyWidth: 9,
     bodyLength: 16,
 
@@ -399,7 +404,7 @@ var robotTemplates = [
     bodyEdgeToWheelCenterY: 2,
     bodyEdgeToWheelCenterZ: 6,
 
-    bodyMass: 1000,
+    bodyMass: 2000,
     wheelMass: 200,
     casterMass: 0, // Warning: No effect due to parenting
     caster: true,
@@ -413,6 +418,26 @@ var robotTemplates = [
     imageURL: '',
 
     components: [
+                {
+        type: 'Box',
+        position: [-4.5, 0, 10],
+        rotation: [0, 0, 0],
+        options: {
+          height: 4,
+          width: 1,
+          depth: 5
+        }
+      },
+      {
+        type: 'Box',
+        position: [4.5, 0, 10],
+        rotation: [0, 0, 0],
+        options: {
+          height: 4,
+          width: 1,
+          depth: 5
+        }
+      },
       {
         type: 'ColorSensor',
         position: [0, -3, 7],
