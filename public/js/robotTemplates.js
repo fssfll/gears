@@ -378,8 +378,8 @@ var robotTemplates = [
       '</ul>' +
       '<h3>#robot-actuators#</h3>' +
       '<ul>' +
-        '<li>#robot-port# A : #robot-leftWheel#</li>' +
-        '<li>#robot-port# B : #robot-rightWheel#</li>' +
+        '<li>#robot-port# B : #robot-leftWheel#</li>' +
+        '<li>#robot-port# C : #robot-rightWheel#</li>' +
       '</ul>' +
       '<h3>#robot-sensors#</h3>' +
       '<ul>' +
