@@ -546,13 +546,13 @@ var simPanel = new function() {
 
     if (robot.processedOptions.wheels) {
       let tmp = genDiv(
-        'outA: ' + i18n.get('#sim-left_motor#'),
+        'outB: ' + i18n.get('#sim-left_motor#'),
         [i18n.get('#sim-position#')]
       );
       self.$sensorsPanel.append(tmp[0]);
       self.sensors.push([robot.leftWheel, tmp[1]]);
       tmp = genDiv(
-        'outB: ' + i18n.get('#sim-right_motor#'),
+        'outC: ' + i18n.get('#sim-right_motor#'),
         [i18n.get('#sim-position#')]
       );
       self.$sensorsPanel.append(tmp[0]);
