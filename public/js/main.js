@@ -455,9 +455,9 @@ var main = new function() {
       ];
       var tickIndex;
       if (blockly.generator == ev3dev2_generator) {
-        tickIndex = 1;
-      } else if (blockly.generator == pybricks_generator) {
         tickIndex = 0;
+      } else if (blockly.generator == pybricks_generator) {
+        tickIndex = 1;
       }
       menuItems[tickIndex].html = '<span class="tick">&#x2713;</span> ' + menuItems[tickIndex].html;
 
