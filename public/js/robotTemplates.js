@@ -168,11 +168,32 @@ i18n.append({
     nl: 'Enkele sensor lijnvolger',
     he: 'חיישן עקיבת קו',
   },
-  '#robot-singleFollowerLong#': {
+  '#robot-springtrainingshort#': {
+    en: 'FSS Spring Training Robot',
+    fr: 'Suiveur de ligne à un capteur (Single Sensor Line Follower)',
+    de: 'Einsensor Linienverfolger',
+    nl: 'Enkele sensor lijnvolger',
+    he: 'חיישן עקיבת קו',
+  },
+  '#robot-springtraininglong#': {
     en:
-      '<p>This robot is equipped with a single color sensor for line following.</p>' +
-      '<p>An electromagnet at the bottom of the robot lets you pick up magnetic objects, and a Pen lets you draw a line in the world to see the robot\'s path.</p>' +
-      '<p>It\'s good for learning the basics of line following, but some line following maps will require double sensors.</p>',
+      '<p>This robot is equipped with a single color sensor for line following.</p>',
+    fr:
+      '<p>Ce robot n\'est équipé que d\'un capteur de couleurs pour suivre la ligne.</p>' +
+      '<p>Un électroaimant sous le robot permet de ramasser des objets magnétiques.</p>' +
+      '<p>C\'est un bon début pour apprendre les bases des suiveurs de ligne, mais pour certaines cartes plus complexes il faudra deux capteurs.</p>',
+    de:
+      '<p>Dieser Roboter ist mit einem einzigen Farbsensor für das Folgen von Linien ausgestattet</p>' +
+      '<p>Ein Elektromagnet unter dem Roboter ermöglicht dir das Aufheben von magnetischen Objekten</p>' +
+      '<p>Es ist gut, um die Grundlagen der Linienverfolgung zu erlernen, aber einige Linienverfolgungskarten erfordern Doppelsensoren.</p>',
+    nl:
+      '<p>Deze robot is uitgerust met een enkele kleurensensor voor lijn volgen.</p>' +
+      '<p>Een elektromagneet aan de onderkant van de robot laat je magnetische objecten oppikken.</p>' +
+      '<p>Het is goed om de basis van lijnvolgen te leren, maar sommige lijnvolg arena\'s vereisen dubbele sensors.</p>',
+  },
+  '#robot-springtraininglong#': {
+    en:
+      '<p>This robot is equipped with a single color sensor for line following.</p>',
     fr:
       '<p>Ce robot n\'est équipé que d\'un capteur de couleurs pour suivre la ligne.</p>' +
       '<p>Un électroaimant sous le robot permet de ramasser des objets magnétiques.</p>' +
@@ -345,6 +366,61 @@ i18n.append({
 
 
 var robotTemplates = [
+    {
+    name: 'springtraining',
+    shortDescription: '#robot-springtrainingshort#',
+    longDescription: '#robot-springtraininglong#',
+    longerDescription:
+      '<h3>#robot-dimensions#</h3>' +
+      '<ul>' +
+        '<li>#robot-wheelDiameter#: 5.6 cm</li>' +
+        '<li>#robot-wheelSpacing#: 10.1 cm</li>' +
+      '</ul>' +
+      '<h3>#robot-actuators#</h3>' +
+      '<ul>' +
+        '<li>#robot-port# A : #robot-leftWheel#</li>' +
+        '<li>#robot-port# B : #robot-rightWheel#</li>' +
+      '</ul>' +
+      '<h3>#robot-sensors#</h3>' +
+      '<ul>' +
+        '<li>#robot-port# 1 : #robot-color#</li>' +
+      '</ul>',
+    thumbnail: 'images/robots/singleFollower.jpg',
+
+    bodyHeight: 9,
+    bodyWidth: 9,
+    bodyLength: 16,
+
+    wheels: true,
+    wheelDiameter: 5.6,
+    wheelWidth: 1.4,
+    wheelToBodyOffset: 0.2,
+
+    bodyEdgeToWheelCenterY: 2,
+    bodyEdgeToWheelCenterZ: 6,
+
+    bodyMass: 1000,
+    wheelMass: 200,
+    casterMass: 0, // Warning: No effect due to parenting
+    caster: true,
+
+    wheelFriction: 10,
+    bodyFriction: 0,
+    casterFriction: 0, // Warning: No effect due to parenting
+
+    color: '#F09C0D',
+    imageType: 'all',
+    imageURL: '',
+
+    components: [
+      {
+        type: 'ColorSensor',
+        position: [0, -3, 7],
+        rotation: [Math.PI/2, 0, 0],
+        options: null
+      }
+    ]
+  },
   {
     name: 'singleFollower',
     shortDescription: '#robot-singleFollowerShort#',
