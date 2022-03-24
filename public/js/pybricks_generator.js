@@ -117,7 +117,7 @@ var pybricks_generator = new function() {
     code += sensorsCode + '\n';
     code += motorsCode + '\n';
 
-    code += 'robot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=108)\n';
+    code += 'robot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=89)\n';
     code += 'robot.settings(straight_speed=200, straight_acceleration=100, turn_rate=100, turn_acceleration=100)\n\n';
     
     code += '################################################\n';
