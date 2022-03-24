@@ -374,7 +374,7 @@ var robotTemplates = [
       '<h3>#robot-dimensions#</h3>' +
       '<ul>' +
         '<li>#robot-wheelDiameter#: 5.6 cm</li>' +
-        '<li>#robot-wheelSpacing#: 10.1 cm</li>' +
+        '<li>#robot-wheelSpacing#: 8.9 cm</li>' +
       '</ul>' +
       '<h3>#robot-actuators#</h3>' +
       '<ul>' +
@@ -393,7 +393,7 @@ var robotTemplates = [
     thumbnail: 'images/robots/singleFollower.jpg',
 
     bodyHeight: 4,
-    bodyWidth: 9,
+    bodyWidth: 7.8,
     bodyLength: 16,
 
     wheels: true,
